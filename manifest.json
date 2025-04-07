@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "AI Travel Assistant for Google Flights",
+  "version": "1.0",
+  "description": "Chat with an AI to find flights directly on Google Flights.",
+  
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+
+  "permissions": [
+    "storage", 
+    "activeTab",
+    "tabs",
+    "identity"
+  ],
+
+  "host_permissions": [
+    "https://www.google.com/flights*",
+    "https://www.google.com/travel/flights*",
+    "https://dialogflow.googleapis.com/*",
+    "https://us-central1-ai-travel-assistant-451501.cloudfunctions.net/*"
+  ],
+
+  "oauth2": {
+    "client_id": "403379416724-o93cmh0a2rpeksu4d2dqmb7it9sjqr1j.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/dialogflow"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/flights*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  }
+}
