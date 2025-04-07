@@ -1,6 +1,3 @@
-# AI-Travel-Assistant
-Making easier to search for flights
-
 # ✈️ AI Travel Assistant Chrome Extension  
 ## A Smart Flight Search Assistant Powered by Dialogflow & SerpAPI
 
